@@ -373,7 +373,7 @@ Use the `cross_fields` query to search for data across multiple fields. For exam
 
 The `most_fields` query does not work in this case because of the following problems:
 
-- The [`operator` and `minimum_should_match`](#operator-and-minimum-should-match) parameters are applied on a field basis instead of on a term basis.
+- The [`operator` and `minimum_should_match`](#operator-and-minimum-should-match) parameters are applied on a term basis instead of on a field basis.
 - Term frequencies in the `first_name` and `last_name` fields can lead to unexpected results. For example, if someone's first name happens to be `Doe`, a document with this name will be presumed a better match because this first name will not appear in any other documents.
 
 The `cross_fields` query analyzes the query string into individual terms and then searches for each of the terms in any of the fields, as if they were one field.
